@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="wszst_yaz0",
-    version="1.0.0",
+    version="1.1.0",
     author="leoetlino",
     author_email="leo@leolam.fr",
     description="Quick and dirty wrapper around wszst",
