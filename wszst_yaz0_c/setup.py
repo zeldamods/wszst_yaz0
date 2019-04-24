@@ -6,6 +6,7 @@ import re
 import sys
 import platform
 import subprocess
+from pathlib import Path
 
 from setuptools import setup, Extension
 from setuptools.command.build_ext import build_ext
@@ -14,7 +15,7 @@ from distutils.version import LooseVersion
 
 class CMakeExtension(Extension):
     def __init__(self, name, sourcedir=''):
-        Extension.__init__(self, name, sources=[])
+        Extension.__init__(self, name, sources=[str(p) for p in Path(sourcedir).glob('**/*')])
         self.sourcedir = os.path.abspath(sourcedir)
 
 
@@ -68,7 +69,7 @@ setup(
     author_email='leo@leolam.fr',
     description='Native extension for wszst_yaz0',
     long_description='',
-    ext_modules=[CMakeExtension('wszst_yaz0_c')],
+    ext_modules=[CMakeExtension('wszst_yaz0_c', 'src')],
     cmdclass=dict(build_ext=CMakeBuild),
     zip_safe=False,
 )
