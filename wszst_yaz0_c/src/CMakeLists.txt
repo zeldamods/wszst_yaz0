@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.11)
+cmake_minimum_required(VERSION 3.10)
 project(wszst_yaz0_c CXX)
 
 find_package(pybind11 REQUIRED)
