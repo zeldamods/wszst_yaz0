@@ -66,7 +66,7 @@ setup(
     version='1.0.0',
     author='leoetlino',
     author_email='leo@leolam.fr',
-    description='A test project using pybind11 and CMake',
+    description='Native extension for wszst_yaz0',
     long_description='',
     ext_modules=[CMakeExtension('wszst_yaz0_c')],
     cmdclass=dict(build_ext=CMakeBuild),
