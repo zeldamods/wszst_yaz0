@@ -7,9 +7,7 @@
 
 #include "swap.h"
 
-#ifdef _WIN32
-byml::u32 htonl(byml::u32);
-#else
+#ifndef _WIN32
 #include <arpa/inet.h>
 #endif
 
@@ -17,7 +15,11 @@ namespace common {
 
 namespace detail {
 inline bool isBigEndianPlatform() {
+#ifdef _WIN32
+  return false;
+#else
   return htonl(0x12345678) == 0x12345678;
+#endif
 }
 
 template <typename T>
