@@ -64,7 +64,7 @@ class CMakeBuild(build_ext):
 
 setup(
     name='wszst_yaz0_c',
-    version='1.0.0',
+    version='1.0.1',
     author='leoetlino',
     author_email='leo@leolam.fr',
     description='Native extension for wszst_yaz0',
